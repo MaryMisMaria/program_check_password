@@ -1,16 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import PasswordStrengthChecker from "./components/check_password/check_password";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
+    <div>
+      <header>
+       <title>Check password</title>
       </header>
+     <body>
+      <PasswordStrengthChecker />
+     </body>
     </div>
   );
 }
