@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/program_check_password/static/css/main.5f3299ad.css",
+    "main.js": "/program_check_password/static/js/main.06baaee9.js",
+    "index.html": "/program_check_password/index.html",
+    "main.5f3299ad.css.map": "/program_check_password/static/css/main.5f3299ad.css.map",
+    "main.06baaee9.js.map": "/program_check_password/static/js/main.06baaee9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f3299ad.css",
+    "static/js/main.06baaee9.js"
+  ]
+}
