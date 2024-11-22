@@ -16,6 +16,8 @@ public
 # production
 /build
 
+.gitignore
+
 # misc
 .DS_Store
 .env.local
@@ -30,3 +32,4 @@ yarn-error.log*
 *.xml
 .idea/deployment.xml
 .idea/prettier.xml
+.idea/workspace.xml

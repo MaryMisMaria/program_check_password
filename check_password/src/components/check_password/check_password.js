@@ -100,7 +100,7 @@ const PasswordStrengthChecker = () => {
             onClick={handleTogglePasswordVisibility}
           >
             {
-              showPassword ? <FaEye size={20} title='Hide'/> : <FaEyeSlash size={20} title='Show'/>
+              showPassword ? <FaEye size={20} title='Hide' /> : <FaEyeSlash size={20} title='Show' />
             }
           </button>
         </div>
@@ -132,9 +132,9 @@ const PasswordStrengthChecker = () => {
           </div>
         )}
       <div className='strength-indicators'>
-        <div className='strength-indicator' style={{backgroundColor: colors[0]}}/>
-        <div className='strength-indicator' style={{backgroundColor: colors[1]}}/>
-        <div className='strength-indicator' style={{backgroundColor: colors[2]}}/>
+        <div className='strength-indicator' style={{backgroundColor: colors[0]}} />
+        <div className='strength-indicator' style={{backgroundColor: colors[1]}} />
+        <div className='strength-indicator' style={{backgroundColor: colors[2]}} />
       </div>
       <div className='password-strength-message'>
         {
