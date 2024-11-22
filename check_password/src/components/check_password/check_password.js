@@ -6,18 +6,18 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './check_password.css';
 
 const PasswordStrengthChecker = () => {
-	const [password, setPassword] = useState('');
-	const [strength, setStrength] = useState('');
-	const [showPassword, setShowPassword] = useState(false);
-	const [showInstruction, setShowInstruction] = useState(false);
+const [password, setPassword] = useState('');
+const [strength, setStrength] = useState('');
+const [showPassword, setShowPassword] = useState(false);
+const [showInstruction, setShowInstruction] = useState(false);
 
-	const handleToggleInstruction = () => setShowInstruction(!showInstruction);
+const handleToggleInstruction = () => setShowInstruction(!showInstruction);
 
-	const handleTogglePasswordVisibility = () => setShowPassword(!showPassword);
+const handleTogglePasswordVisibility = () => setShowPassword(!showPassword);
 
-	const calculateStrength = password => {
-		if (R.not(password)) return 'empty';
-		if (R.lte(R.length(password), 8)) return 'short';
+const calculateStrength = password => {
+  if (R.not(password)) return 'empty';
+	if (R.lte(R.length(password), 8)) return 'short';
 
 		const rules = [
 			/[a-zA-Z]/,
