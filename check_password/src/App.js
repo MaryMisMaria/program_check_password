@@ -4,10 +4,11 @@ function App() {
   return (
     <div>
       <header>
+       <title>Check password</title>
       </header>
-      <body>
-        <PasswordStrengthChecker />
-      </body>
+     <body>
+      <PasswordStrengthChecker />
+     </body>
     </div>
   );
 }
