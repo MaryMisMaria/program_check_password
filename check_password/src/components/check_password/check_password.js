@@ -17,7 +17,7 @@ const handleTogglePasswordVisibility = () => setShowPassword(!showPassword);
 
 const calculateStrength = password => {
   if (R.not(password)) return 'empty';
-	if (R.lte(R.length(password), 8)) return 'short';
+  if (R.lte(R.length(password), 8)) return 'short';
 
 		const rules = [
 			/[a-zA-Z]/,
