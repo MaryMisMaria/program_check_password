@@ -12,28 +12,33 @@ const PasswordStrengthChecker = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showInstruction, setShowInstruction] = useState(false);
   
+  // Toggle visibility of the instruction panel.
   const handleToggleInstruction = () => setShowInstruction(!showInstruction);
   
+  // Toggle visibility of the password field.
   const handleTogglePasswordVisibility = () => setShowPassword(!showPassword);
   
+  // Function to calculate password strength
   const calculateStrength = password => {
     if (R.not(password)) return 'empty';
-    if (R.lte(R.length(password), 8)) return 'short';
-    
+    if (R.or(R.lte(R.length(password), 8), R.equals(R.length(password), 8))) return 'short';
+  
+    // Validation rules for the password
     const rules = [
       /[a-zA-Z]/,
       /[0-9]/,
       /[!@#$%^&*(),.?":{}|<>]/,
     ];
-    
+  
+    // Count how many rules the password satisfies.
     const countMatches = R.pipe(
       R.map(rule => rule.test(password)),
       R.filter(Boolean),
       R.length,
     );
-    
+  
     const strength = countMatches(rules);
-    
+  
     return R.cond([
       [R.equals(3), R.always('strong')],
       [R.equals(2), R.always('medium')],
@@ -42,6 +47,7 @@ const PasswordStrengthChecker = () => {
     ])(strength);
   };
   
+  // Update state when the password input changes
   const handleChange = e => {
     const value = e.target.value;
     
@@ -50,12 +56,14 @@ const PasswordStrengthChecker = () => {
     setCopySuccess('');
   };
   
+  // Copy the password to the clipboard.
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password)
     .then(() => setCopySuccess('Password copied to clipboard!'))
     .catch(() => setCopySuccess('Failed to copy password.'));
   };
   
+  // Get colors for the strength indicators based on password strength.
   const getStrengthColors = () => {
     switch (strength) {
       case 'empty':
