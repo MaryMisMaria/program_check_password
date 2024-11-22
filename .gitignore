@@ -11,3 +11,5 @@ check_password/public/logo512.png
 check_password/public/robots.txt
 .idea/vcs.xml
 check_password/README.md
+.idea/prettier.xml
+.idea/deployment.xml
