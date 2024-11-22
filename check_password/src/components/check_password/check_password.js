@@ -21,7 +21,11 @@ const PasswordStrengthChecker = () => {
   // Function to calculate password strength
   const calculateStrength = password => {
     if (R.not(password)) return 'empty';
-    if (R.or(R.lte(R.length(password), 8), R.equals(R.length(password), 8))) return 'short';
+    
+    if (R.lt(R.length(password), 8)) return 'short';
+    
+    if (R.equals(R.length(password), 8)) return 'weak';
+  
   
     // Validation rules for the password
     const rules = [
