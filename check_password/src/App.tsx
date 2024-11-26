@@ -21,26 +21,15 @@ const App: FC = () => {
 
     const { calculateStrength, getStrengthColors } = usePasswordStrength();
 
-    const handleClose = () => {
-        setShowInstruction(false);
-    }
+    const handleClose = () => setShowInstruction(false)
 
-    const handleToggleInstruction = () => {
-        setShowInstruction(!showInstruction);
-    }
+    const handleToggleInstruction = () => setShowInstruction(!showInstruction);
 
     const handlePasswordChange = (value: string) => {
         setPassword(value);
         setStrength(calculateStrength(value));
         setCopySuccess('');
     };
-
-    const handleGeneratePassword = () => {
-        if (isPasswordEmpty) {
-            const newPassword = useGeneratePassword();
-            setPassword(newPassword);
-            setStrength(calculateStrength(newPassword));
-        }}
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(password)
@@ -98,7 +87,13 @@ const App: FC = () => {
                     text='Generate Password'
                     disabled={!isPasswordEmpty}
                     title='Generate a new password'
-                    onClick={handleGeneratePassword}
+                    onClick={() => {
+                        if (isPasswordEmpty) {
+                            const newPassword = useGeneratePassword();
+                            setPassword(newPassword);
+                            setStrength(calculateStrength(newPassword));
+                        }
+                    }}
                 />
             </div>
             {
