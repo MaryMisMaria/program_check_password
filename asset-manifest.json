@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/program_check_password/static/css/main.a8563d6b.css",
-    "main.js": "/program_check_password/static/js/main.6f75a818.js",
+    "main.js": "/program_check_password/static/js/main.b6da9427.js",
     "index.html": "/program_check_password/index.html",
     "main.a8563d6b.css.map": "/program_check_password/static/css/main.a8563d6b.css.map",
-    "main.6f75a818.js.map": "/program_check_password/static/js/main.6f75a818.js.map"
+    "main.b6da9427.js.map": "/program_check_password/static/js/main.b6da9427.js.map"
   },
   "entrypoints": [
     "static/css/main.a8563d6b.css",
-    "static/js/main.6f75a818.js"
+    "static/js/main.b6da9427.js"
   ]
 }
