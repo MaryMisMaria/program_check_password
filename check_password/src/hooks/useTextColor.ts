@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
-const useTextColor = (strength: string): string => {
-    return useMemo(() => {
+const useTextColor = (strength: string): string => useMemo(() => {
         switch (strength) {
             case 'empty':
                 return '#555';
@@ -17,6 +16,5 @@ const useTextColor = (strength: string): string => {
                 return '#555';
         }
     }, [strength]);
-};
 
 export default useTextColor;

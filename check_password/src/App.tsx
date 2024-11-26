@@ -90,6 +90,7 @@ const App: FC = () => {
                     onClick={() => {
                         if (isPasswordEmpty) {
                             const newPassword = useGeneratePassword();
+                            
                             setPassword(newPassword);
                             setStrength(calculateStrength(newPassword));
                         }

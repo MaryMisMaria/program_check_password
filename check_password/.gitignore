@@ -9,7 +9,7 @@ public
 /.idea
 # testing
 /coverage
-
+.idea/workspace.xml
 # production
 /build
 package-lock.json

@@ -11,7 +11,7 @@ type PasswordInputProps = {
 }
 
 const PasswordInput: React.FC<PasswordInputProps> = ({value, onChange, placeholder}) => {
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
