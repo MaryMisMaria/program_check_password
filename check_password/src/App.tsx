@@ -1,4 +1,3 @@
-import * as R from 'ramda';
 import React, { useState } from 'react';
 // components
 import CustomButton from './components/custom_button/custom_button';
@@ -18,7 +17,7 @@ const App: React.FC = () => {
     const [strength, setStrength] = useState<strength>('empty');
     const [showInstruction, setShowInstruction] = useState(false);
 
-    const isPasswordEmpty = R.isEmpty(R.trim(password));
+    const isPasswordEmpty = password.trim().length === 0;
 
     const { calculateStrength, getStrengthColors } = usePasswordStrength();
 
@@ -43,27 +42,27 @@ const App: React.FC = () => {
                 onClose={() => setShowInstruction(false)}
             />
             <PasswordStrengthIndicator colors={getStrengthColors(strength)} />
-            <div className='password-strength-message' style={{color: useTextColor(strength)}}>
+            <div className="password-strength-message" style={{ color: useTextColor(strength) }}>
                 {
-                    R.equals(strength, 'empty') && (
-                        <span>Enter a password to check its strength. Please use English.</span>
-                    )}
+                    strength === 'empty' && (
+                    <span>Enter a password to check its strength. Please use English.</span>
+                )}
                 {
-                    R.equals(strength, 'short') && (
-                        <span>Password is too short. Minimum 8 characters required.</span>
-                    )}
+                    strength === 'short' && (
+                    <span>Password is too short. Minimum 8 characters required.</span>
+                )}
                 {
-                    R.equals(strength, 'weak') && (
-                        <span>Weak password. Add more variety of characters.</span>
-                    )}
+                    strength === 'weak' && (
+                    <span>Weak password. Add more variety of characters.</span>
+                )}
                 {
-                    R.equals(strength, 'medium') && (
-                        <span>Medium password. Consider using more special characters.</span>
-                    )}
+                    strength === 'medium' && (
+                    <span>Medium password. Consider using more special characters.</span>
+                )}
                 {
-                    R.equals(strength, 'strong') && (
-                        <span>Strong password. Great job!</span>
-                    )}
+                    strength === 'strong' && (
+                    <span>Strong password. Great job!</span>
+                )}
             </div>
             <div className='wrapper-button'>
                 <CustomButton
@@ -76,12 +75,12 @@ const App: React.FC = () => {
                     disabled={false}
                     text='Show Instructions'
                     title='Toggle password instructions'
-                    onClick={() => setShowInstruction(R.not(showInstruction))}
+                    onClick={() => setShowInstruction(!showInstruction)}
                 />
                 <CustomButton
                     text='Generate Password'
                     title='Generate a new password'
-                    disabled={R.not(isPasswordEmpty)}
+                    disabled={!isPasswordEmpty}
                     onClick={() => {
                         if (isPasswordEmpty) {
                             const newPassword = generatePassword();

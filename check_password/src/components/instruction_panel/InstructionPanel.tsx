@@ -1,15 +1,14 @@
-import React from 'react';
-import * as R from 'ramda';
+import React, { FC } from 'react';
 // style
 import './instruction_panel.css';
 
-interface InstructionPanelProps {
+type InstructionPanelProps = {
     isVisible: boolean;
     onClose: () => void;
 }
 
-const InstructionPanel: React.FC<InstructionPanelProps> = ({ isVisible, onClose }) => {
-    if (R.not(isVisible)) return null;
+const InstructionPanel: FC<InstructionPanelProps> = ({ isVisible, onClose }) => {
+    if (!isVisible) return null;
 
     return (
         <div className='instruction-panel'>

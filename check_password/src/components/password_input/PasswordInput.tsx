@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // style
 import './password_input.css';
 
-interface PasswordInputProps {
+type PasswordInputProps = {
     value: string;
     placeholder?: string;
     onChange: (value: string) => void;
@@ -21,7 +21,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({value, onChange, placehold
                 value={value}
                 className='password-input'
                 type={showPassword ? 'text' : 'password'}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={e => onChange(e?.target?.value)}
                 placeholder={placeholder || 'Enter your password'}
             />
             <button

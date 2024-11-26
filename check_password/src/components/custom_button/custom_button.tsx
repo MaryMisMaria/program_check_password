@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 // style
 import './custom_button.css'
 
-interface CustomButtonProps {
+type CustomButtonProps = {
     text: string;
     title: string;
     disabled?: boolean;
     onClick: () => void;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ text, onClick, disabled = false, title }) => {
-    return (
+const CustomButton: FC<CustomButtonProps> = ({ text,  title, onClick, disabled = false }) => (
         <button
             title={title}
             onClick={onClick}
@@ -20,6 +19,5 @@ const CustomButton: React.FC<CustomButtonProps> = ({ text, onClick, disabled = f
             {text}
         </button>
     );
-};
 
 export default CustomButton;
