@@ -1,4 +1,4 @@
-export const generatePassword = (): string => {
+const useGeneratePassword = (): string => {
     let password = '';
 
     const length = 12;
@@ -11,3 +11,5 @@ export const generatePassword = (): string => {
 
     return password;
 };
+
+export default useGeneratePassword;
