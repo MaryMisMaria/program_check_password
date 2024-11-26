@@ -4,10 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-package.json
 public
 .idea
-
+/.idea
 # testing
 /coverage
 
