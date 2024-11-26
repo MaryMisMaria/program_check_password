@@ -80,8 +80,8 @@ const App: React.FC = () => {
                 />
                 <CustomButton
                     text='Generate Password'
-                    disabled={R.not(isPasswordEmpty)}
                     title='Generate a new password'
+                    disabled={R.not(isPasswordEmpty)}
                     onClick={() => {
                         if (isPasswordEmpty) {
                             const newPassword = generatePassword();

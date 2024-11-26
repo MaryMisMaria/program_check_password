@@ -31,7 +31,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({value, onChange, placehold
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
                 {
-                    showPassword ? <FaEyeSlash size={20}/> : <FaEye size={20}/>
+                    showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />
                 }
             </button>
         </div>
